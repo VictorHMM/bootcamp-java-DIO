@@ -14,21 +14,21 @@ public class Stack {
         return firstNodeRef == null;
     }
 
-    public Node top(){
-        return firstNodeRef;
+    public Object top(){
+        return firstNodeRef.getContent();
     }
 
-    public void push(Node node){
-        Node aux = firstNodeRef;
+    public void push(Object obj){
+        Node aux = firstNodeRef, node = new Node(obj);
         firstNodeRef = node;
         node.setNextNode(aux);
     }
 
-    public Node pop(){
+    public Object pop(){
         if (!this.isEmpty()) {
             Node popped = firstNodeRef;
             firstNodeRef = firstNodeRef.getNextNode();
-            return popped;
+            return popped.getContent();
         }
         return null;
     }

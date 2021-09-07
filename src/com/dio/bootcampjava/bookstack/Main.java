@@ -21,7 +21,7 @@ public class Main {
                     if (bookStack.isEmpty())
                         System.out.println("There is no book to see.");
                     else
-                        System.out.println(bookStack.top().getContent());
+                        System.out.println(bookStack.top());
                     break;
                 case 2:
                     input.nextLine();
@@ -31,13 +31,13 @@ public class Main {
                     String author = input.nextLine();
                     System.out.println("Insert the number of pages:");
                     int pages = input.nextInt();
-                    bookStack.push(new Node(new Book(title, author, pages)));
+                    bookStack.push((new Book(title, author, pages)));
                     break;
                 case 3:
                     if (bookStack.isEmpty())
                         System.out.println("There is no book to remove.");
                     else
-                        System.out.println(bookStack.pop().getContent());
+                        System.out.println(bookStack.pop());
                     break;
                 case 4:
                     if (bookStack.isEmpty())
