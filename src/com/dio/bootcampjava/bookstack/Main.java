@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Stack bookStack = new Stack();
+        Stack<Book> bookStack = new Stack<>();
         int option;
         do {
             System.out.println("===== Book Stack =====");

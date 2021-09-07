@@ -2,9 +2,9 @@ package com.dio.bootcampjava.stack;
 
 import com.dio.bootcampjava.node.Node;
 
-public class Stack {
+public class Stack<T> {
 
-    private Node firstNodeRef;
+    private Node<T> firstNodeRef;
 
     public Stack(){
         this.firstNodeRef = null;
@@ -14,21 +14,21 @@ public class Stack {
         return firstNodeRef == null;
     }
 
-    public Object top(){
+    public T top(){
         return firstNodeRef.getContent();
     }
 
-    public void push(Object obj){
-        Node aux = firstNodeRef, node = new Node(obj);
+    public void push(T object){
+        Node aux = firstNodeRef, node = new Node(object);
         firstNodeRef = node;
         node.setNextNode(aux);
     }
 
-    public Object pop(){
+    public T pop(){
         if (!this.isEmpty()) {
             Node popped = firstNodeRef;
             firstNodeRef = firstNodeRef.getNextNode();
-            return popped.getContent();
+            return (T) popped.getContent();
         }
         return null;
     }
